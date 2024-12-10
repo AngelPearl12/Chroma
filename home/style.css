@@ -1,0 +1,211 @@
+/* General Reset */
+body, h1, h2, h3, p, a, input, textarea, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  background: url('best-massage-we-have.jpg') no-repeat center center/cover; /* Add the background image */
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  height: 100vh; /* Make it full-screen */
+  display: flex; /* Center content vertically and horizontally */
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(0, 0, 0, 0.5); /* Add a transparent black background to improve text visibility */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #b08e74;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #A98467;
+}
+
+
+/* About Section */
+.about {
+  text-align: center;
+  padding: 40px 20px;
+  background: #fff;
+}
+
+.about h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+/* Services Section */
+.services {
+  background: #f4f4f4;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  margin-bottom: 20px;
+}
+
+.service-card {
+  display: inline-block;
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  font-size: 1.2em;
+}
+
+.btn-secondary {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #555;
+}
+/* About Section */
+.about {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.about h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #555;
+  max-width: 800px; /* Limits the text width for better readability */
+  margin: 10px auto; /* Centers the text content */
+}
+
+.about p:last-child {
+  margin-bottom: 0; /* Removes unnecessary margin for the last paragraph */
+}
+
+img{
+  height: 150px;
+  width: 150px;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.testimonial {
+  margin: 20px auto;
+  max-width: 600px;
+  font-style: italic;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 10px;
+  color: #555;
+}
+
+/* Contact Section */
+.contact {
+  background: #f4f4f4;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact button {
+  width: 100%;
+  padding: 10px;
+  background: #b08e74;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact button:hover {
+  background: #A98467;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #333;
+  color: white;
+  font-size: 0.9em;
+}
