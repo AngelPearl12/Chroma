@@ -1,0 +1,106 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+header {
+  text-align: center;
+  background-color: #ADC178;
+  padding: 20px;
+  color: #fff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+header p {
+  margin: 5px 0 0;
+  font-size: 1.2em;
+}
+
+/* Button Styles */
+.avail-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px; 
+  font-size: 1em; 
+  font-weight: bold; 
+  color: #fff; 
+  background-color: #A98467; 
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.avail-btn:hover {
+  background-color: #A98467; 
+  transform: scale(1.05); 
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.avail-btn:active {
+  background-color: #A98467; 
+  transform: scale(0.98); 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.services {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.services h2 {
+  grid-column: span 2; 
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: #444;
+}
+
+.service {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.service img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.service h3 {
+  margin: 10px 0 5px;
+  font-size: 1.5em;
+}
+
+.service p {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.service .price {
+  font-weight: bold;
+  color: #A98467;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.9em;
+}
