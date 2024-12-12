@@ -5,7 +5,7 @@ include 'header.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Sign Up</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Embedded CSS for demonstration */
@@ -46,6 +46,7 @@ include 'header.php';
             display: block;
         }
 
+        input[type="text"],
         input[type="email"],
         input[type="password"] {
             width: 100%;
@@ -96,17 +97,18 @@ include 'header.php';
 <body>
     <main>
         <form method="POST" action="handler_signup.php">
-            <h2>Login</h2>
-            <label for="email">Email Address</label>    
+            <h2>Sign Up</h2>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="email">Email Address</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
-            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
-
-            <button type="submit">Log In</button>
-            <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
+            <a href="index.php" class="avail-btn">Sign Up</a>
+            <p>Already have an account? <a href="login.php">Log In</a></p>
         </form>
     </main>
 </body>

@@ -2,10 +2,11 @@
 include 'database.php';
 include 'header.php';
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Make a Payment</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Embedded CSS for demonstration */
@@ -16,39 +17,32 @@ include 'header.php';
             padding: 0;
         }
 
-        main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-
-        form {
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
             background: #fff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
         }
 
         h2 {
             text-align: center;
             color: #333;
-            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
         }
 
         label {
             font-weight: bold;
             margin-bottom: 5px;
             color: #555;
-            display: block;
         }
 
-        input[type="email"],
-        input[type="password"] {
-            width: 100%;
+        input, select, button {
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ddd;
@@ -56,19 +50,15 @@ include 'header.php';
             font-size: 16px;
         }
 
-        input:focus {
+        input:focus, select:focus {
             border-color: #A98467;
             outline: none;
         }
 
         button {
-            width: 100%;
-            padding: 10px;
             background-color: #A98467;
             color: white;
             font-size: 16px;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
@@ -77,38 +67,45 @@ include 'header.php';
             background-color: #8c6b54;
         }
 
-        p {
+        .back-link {
             text-align: center;
             margin-top: 15px;
         }
 
-        p a {
-            color: #A98467;
+        .back-link a {
             text-decoration: none;
+            color: #A98467;
         }
 
-        p a:hover {
+        .back-link a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
-
 <body>
-    <main>
-        <form method="POST" action="handler_signup.php">
-            <h2>Login</h2>
-            <label for="email">Email Address</label>    
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <div class="container">
+        <h2>Make a Payment</h2>
+        <form method="POST" action="payment_handler.php">
+            <label for="appointment">Select Appointment</label>
+            <select id="appointment" name="appointment_id" required>
+                <option value="" disabled selected>Select an appointment</option>
+                <?php
+                $result = mysqli_query($conn, "SELECT appointment_id, appointment_date FROM appointments WHERE user_id = {$_SESSION['user_id']}");
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<option value='{$row['appointment_id']}'>Appointment on {$row['appointment_date']}</option>";
+                }
+                ?>
+            </select>
 
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
 
-            <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token']) ?>">
-
-            <button type="submit">Log In</button>
-            <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
+            <button type="submit">Pay Now</button>
+            <div class="back-link">
+                <a href="index.php">Back to Home</a>
+            </div>
         </form>
-    </main>
+    </div>
 </body>
 
 <?php include 'footer.php'; ?>
